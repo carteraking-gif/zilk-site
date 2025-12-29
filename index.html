@@ -56,24 +56,27 @@
       padding: 40px 30px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
+      text-align: left; /* keep readable for bios */
     }
 
     h1 {
       font-size: 36px;
       color: #EF4036;
-      margin-bottom: 20px;
+      margin: 0 0 18px;
+      text-align: center; /* keep the title centered like before */
     }
 
     p {
       font-size: 18px;
       line-height: 1.6;
-      margin-bottom: 18px;
+      margin: 0 0 18px;
     }
 
     .cta {
-      margin-top: 30px;
+      margin-top: 26px;
+      text-align: center;
     }
 
     .cta a {
@@ -89,6 +92,62 @@
 
     .cta a:hover {
       opacity: 0.9;
+    }
+
+    /* ---------- FOUNDERS (image left, text right) ---------- */
+    .founders {
+      margin-top: 28px;
+      border-top: 1px solid #eee;
+      padding-top: 22px;
+    }
+
+    .founder-row {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .founder-row:last-child {
+      border-bottom: none;
+    }
+
+    .founder-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex: 0 0 96px;
+      border: 2px solid rgba(239, 64, 54, 0.25);
+    }
+
+    .founder-text h2 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      color: #EF4036;
+    }
+
+    .founder-text .role {
+      margin: 0 0 10px;
+      font-weight: 700;
+      color: #2e2e2e;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .founder-text p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    /* Mobile: stack image above text */
+    @media (max-width: 520px) {
+      .container { padding: 32px 20px; }
+      .founder-row { flex-direction: column; align-items: center; text-align: center; }
+      .founder-text { text-align: center; }
     }
   </style>
 </head>
@@ -106,6 +165,7 @@
   <div class="container">
     <h1>About Zilk</h1>
 
+    <!-- Keep your previous text -->
     <p>
       Zilk was founded by <strong>Carter King</strong> and <strong>Joseph</strong>, two students based in Logan, Utah,
       who wanted to make it easier for students to discover real, local restaurant deals.
@@ -121,6 +181,40 @@
       Our goal is to support local restaurants while helping students save money, all through
       a platform designed by students, for students.
     </p>
+
+    <!-- New founder section with image-left / text-right -->
+    <div class="founders">
+
+      <div class="founder-row">
+        <img class="founder-photo" src="carter.jpg" alt="Carter King" />
+        <div class="founder-text">
+          <h2>Carter King</h2>
+          <div class="role">Co-Founder • Product & Engineering</div>
+          <p>
+            Carter King is a Data Analytics student at Utah State University and co-founder of Zilk.
+            He builds the product end-to-end—combining data, design, and engineering to ship fast and learn faster.
+            Carter works across React Native/Expo, Supabase, and modern web tooling, with a strong foundation in
+            Python, SQL, and JavaScript. His focus is simple: make local deals easier to discover for students while
+            creating measurable value for Logan businesses.
+          </p>
+        </div>
+      </div>
+
+      <div class="founder-row">
+        <img class="founder-photo" src="joseph.jpg" alt="Joseph" />
+        <div class="founder-text">
+          <h2>Joseph</h2>
+          <div class="role">Co-Founder • Sales & Systems</div>
+          <p>
+            Joseph is an award-winning entrepreneur with a strong track record in high-impact sales and systems building.
+            He has closed deals on products before they existed, built CRMs from scratch to manage customer pipelines,
+            and launched revenue-generating ventures—all before graduating college. Known for setting bold goals and
+            executing with relentless determination, Joseph brings a pragmatic, results-driven mindset to every project.
+          </p>
+        </div>
+      </div>
+
+    </div>
 
     <div class="cta">
       <a href="/download">Get Zilk</a>
